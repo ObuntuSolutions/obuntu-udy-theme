@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div bg-image="Featured image" class="client-project-hero"></div>
+  <div class="client-project-hero" style="background-image: url({{ featured-image }})"></div>
   <div class="w-layout-grid grid">
     <h1 id="w-node-951e9fa004d0-06c0d3fa" class="major-heading darker">{{ title }}</h1>
     <div id="w-node-839d5be37ce6-06c0d3fa" class="client-project-content">
@@ -41,7 +41,7 @@
   {%- for image in additional-project-images -%}<div class="w-dyn-list" style="background-image: url({{ image }})">
     <div role="list" class="w-dyn-items">
       <div role="listitem" class="w-dyn-item">
-        <div class="additional-client-image"></div>
+        <div class="additional-client-image" style="background-image: url({{ additional-project-images }})"></div>
       </div>
     </div>
     <div class="w-dyn-empty">
