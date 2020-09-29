@@ -1,0 +1,16 @@
+{
+  "name": "obuntu-udy-theme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "glob": "^7.1.6",
+    "sharp": "^0.24.0"
+  },
+  "scripts": {
+    "serve": "node optimize.js && npx @11ty/eleventy --serve",
+    "build:local": "node optimize.js && npx @11ty/eleventy"
+  },
+  "devDependencies": {
+    "date-fns": "2.8.1",
+    "html-minifier": "4.0.0"
+  }
+}
