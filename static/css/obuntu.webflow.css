@@ -345,7 +345,6 @@ body {
   height: 700px;
   margin-bottom: 15px;
   background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
-  background-position: 50% 50%;
   background-size: cover;
 }
 
@@ -751,6 +750,90 @@ body {
   align-items: stretch;
 }
 
+.text-block-2 {
+  padding-left: 30px;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  -ms-grid-row-align: auto;
+  align-self: auto;
+  font-family: Vollkorn, serif;
+  color: #d6bf95;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+}
+
+.image-2 {
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  -ms-grid-row-align: auto;
+  align-self: auto;
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+}
+
+.grid-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.div-block {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(145, 111, 79, 0.5)), to(rgba(145, 111, 79, 0.5))), url('../images/luca-bravo-XJXWbfSo2f0-unsplash.jpg');
+  background-image: linear-gradient(180deg, rgba(145, 111, 79, 0.5), rgba(145, 111, 79, 0.5)), url('../images/luca-bravo-XJXWbfSo2f0-unsplash.jpg');
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, cover;
+  text-align: left;
+}
+
+.custom-body {
+  padding: 0px;
+}
+
 @media screen and (max-width: 991px) {
   .home-hero-section {
     min-height: auto;
@@ -1153,6 +1236,9 @@ body {
   }
   .form {
     overflow: hidden;
+  }
+  .text-block-2 {
+    font-size: 17px;
   }
 }
 
