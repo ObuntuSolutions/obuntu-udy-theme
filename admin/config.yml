@@ -180,23 +180,6 @@
           ]
         },
         {
-          "name": "client-testimonial",
-          "label": "Client testimonial",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "featured-image",
-          "label": "Featured image",
-          "widget": "image",
-          "required": false,
-          "media_library": {
-            "config": {
-              "multiple": false
-            }
-          }
-        },
-        {
           "name": "project-summary",
           "label": "Project summary",
           "widget": "text",
@@ -205,6 +188,12 @@
         {
           "name": "project-details",
           "label": "Project details",
+          "widget": "text",
+          "required": false
+        },
+        {
+          "name": "client-testimonial",
+          "label": "Client testimonial",
           "widget": "text",
           "required": false
         },
@@ -225,6 +214,17 @@
           "label": "Date completed",
           "widget": "text",
           "required": false
+        },
+        {
+          "name": "featured-image",
+          "label": "Featured image",
+          "widget": "image",
+          "required": false,
+          "media_library": {
+            "config": {
+              "multiple": false
+            }
+          }
         },
         {
           "name": "additional-project-images",

@@ -1242,48 +1242,26 @@ body {
   }
 }
 
-#w-node-8ff7d5c20765-c4927ffb {
-  -ms-grid-column-span: 2;
-  grid-column-end: 3;
-  -ms-grid-column: 1;
-  grid-column-start: 1;
-  -ms-grid-row-span: 2;
-  grid-row-end: 3;
-  -ms-grid-row: 1;
-  grid-row-start: 1;
+#w-node-951e9fa004d0-06c0d3fa {
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+  -ms-grid-column: span 3;
+  grid-column-start: span 3;
+  -ms-grid-column-span: 3;
+  grid-column-end: span 3;
 }
 
-#w-node-fa019e74165b-c4927ffb {
+#w-node-839d5be37ce6-06c0d3fa {
+  -ms-grid-row: span 3;
+  grid-row-start: span 3;
+  -ms-grid-row-span: 3;
+  grid-row-end: span 3;
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
   -ms-grid-column-span: 1;
-  grid-column-end: 3;
-  -ms-grid-column: 2;
-  grid-column-start: 2;
-  -ms-grid-row-span: 1;
-  grid-row-end: 3;
-  -ms-grid-row: 2;
-  grid-row-start: 2;
-}
-
-#w-node-3955d0674c41-c4927ffb {
-  -ms-grid-column: 2;
-  grid-column-start: 2;
-  -ms-grid-column-span: 1;
-  grid-column-end: 3;
-  -ms-grid-row: 1;
-  grid-row-start: 1;
-  -ms-grid-row-span: 1;
-  grid-row-end: 2;
-}
-
-#w-node-b48c5c9a6950-c4927ffb {
-  -ms-grid-column: 1;
-  grid-column-start: 1;
-  -ms-grid-column-span: 1;
-  grid-column-end: 2;
-  -ms-grid-row: 1;
-  grid-row-start: 1;
-  -ms-grid-row-span: 1;
-  grid-row-end: 2;
+  grid-column-end: span 1;
 }
 
 #w-node-461c3c0f1348-3c0f1347 {
@@ -1311,28 +1289,6 @@ body {
   grid-row-start: 2;
   -ms-grid-row-span: 1;
   grid-row-end: 3;
-}
-
-#w-node-951e9fa004d0-06c0d3fa {
-  -ms-grid-row: span 1;
-  grid-row-start: span 1;
-  -ms-grid-row-span: 1;
-  grid-row-end: span 1;
-  -ms-grid-column: span 3;
-  grid-column-start: span 3;
-  -ms-grid-column-span: 3;
-  grid-column-end: span 3;
-}
-
-#w-node-839d5be37ce6-06c0d3fa {
-  -ms-grid-row: span 3;
-  grid-row-start: span 3;
-  -ms-grid-row-span: 3;
-  grid-row-end: span 3;
-  -ms-grid-column: span 1;
-  grid-column-start: span 1;
-  -ms-grid-column-span: 1;
-  grid-column-end: span 1;
 }
 
 #w-node-8599a14a6ed4-a2d99be2 {
@@ -1395,8 +1351,52 @@ body {
   grid-row-end: 2;
 }
 
+#w-node-8ff7d5c20765-c1c8bdba {
+  -ms-grid-column-span: 2;
+  grid-column-end: 3;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  -ms-grid-row-span: 2;
+  grid-row-end: 3;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+}
+
+#w-node-fa019e74165b-c1c8bdba {
+  -ms-grid-column-span: 1;
+  grid-column-end: 3;
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  -ms-grid-row-span: 1;
+  grid-row-end: 3;
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+}
+
+#w-node-3955d0674c41-c1c8bdba {
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  -ms-grid-column-span: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
+}
+
+#w-node-b48c5c9a6950-c1c8bdba {
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
+}
+
 @media screen and (max-width: 991px) {
-  #w-node-8ff7d5c20765-c4927ffb {
+  #w-node-8ff7d5c20765-c1c8bdba {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -1406,7 +1406,7 @@ body {
     -ms-grid-row: 1;
     grid-row-start: 1;
   }
-  #w-node-fa019e74165b-c4927ffb {
+  #w-node-fa019e74165b-c1c8bdba {
     -ms-grid-column-span: 2;
     grid-column-end: 3;
     -ms-grid-column: 1;
@@ -1419,16 +1419,6 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  #w-node-3955d0674c41-c4927ffb {
-    -ms-grid-column: span 1;
-    grid-column-start: span 1;
-    -ms-grid-column-span: 1;
-    grid-column-end: span 1;
-    -ms-grid-row: span 1;
-    grid-row-start: span 1;
-    -ms-grid-row-span: 1;
-    grid-row-end: span 1;
-  }
   #w-node-951e9fa004d0-06c0d3fa {
     -ms-grid-row: span 1;
     grid-row-start: span 1;
@@ -1502,6 +1492,16 @@ body {
     grid-row-start: 1;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
+  }
+  #w-node-3955d0674c41-c1c8bdba {
+    -ms-grid-column: span 1;
+    grid-column-start: span 1;
+    -ms-grid-column-span: 1;
+    grid-column-end: span 1;
+    -ms-grid-row: span 1;
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
   }
 }
 
