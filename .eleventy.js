@@ -1,19 +1,32 @@
+const markdownIt = require("markdown-it");
 
-      const filters = require('./_utils/filters.js');
+    // Add within your config module
+    const md = new markdownIt({
+    html: true,
+    });
+            
+
+      const createCollectionsAndFilters = require('./_utils/index.js');
       
       module.exports = function(eleventyConfig) {
 
-        const references = JSON.parse('{"team-members**client-projects":{"field":"client-projects","limit":6},"client-projects**is-this-featured":{"field":"is-this-featured","limit":4}}');
+        eleventyConfig.addFilter("markdown", (content) => {
+            if (typeof content == "string") {
+                return md.render(content);
+              }
+              return content;
+          });
+               
+        eleventyConfig.addPassthroughCopy({"theme/assets": "assets"});
 
-        filters(eleventyConfig, references);
-
-        eleventyConfig.addPassthroughCopy("static/**");
-        eleventyConfig.addPassthroughCopy("admin/**");
+        eleventyConfig.addPassthroughCopy("admin");
+        
+        createCollectionsAndFilters(eleventyConfig);
         
         return {
           dir: {
-            input: "site",
-            includes: "_views",
+            input: "cms",
+            includes: "../theme",
             output: "public"
           }
         };

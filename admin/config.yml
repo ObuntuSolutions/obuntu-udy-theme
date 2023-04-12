@@ -1,375 +1,769 @@
-{
-  "backend": {
-    "name": "git-gateway",
-    "accept_roles": [
-      "admin",
-      "editor"
-    ]
-  },
-  "media_folder": "static/images/uploads",
-  "collections": [
-    {
-      "name": "pages",
-      "label": "Pages",
-      "folder": "site/pages",
-      "create": false,
-      "delete": false,
-      "slug": "{{slug}}",
-      "editor": {
-        "preview": false
-      },
-      "fields": [
-        {
-          "label": "Title",
-          "name": "title",
-          "widget": "string"
-        },
-        {
-          "label": "Publish Date",
-          "name": "date",
-          "widget": "datetime"
-        },
-        {
-          "label": "Layout",
-          "widget": "hidden",
-          "name": "layout",
-          "default": "{{slug}}.html"
-        },
-        {
-          "label": "Seo",
-          "name": "seo",
-          "widget": "object",
-          "fields": [
-            {
-              "label": "Title",
-              "name": "title",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Description",
-              "name": "description",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Open Graph Image",
-              "name": "og:image",
-              "widget": "image",
-              "required": false,
-              "media_library": {
-                "config": {
-                  "multiple": false
-                }
-              }
-            },
-            {
-              "label": "Twitter Card",
-              "name": "twitter:card",
-              "widget": "string",
-              "default": "summary",
-              "required": false
-            },
-            {
-              "label": "Twitter Site",
-              "name": "twitter:site",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Twitter Creator",
-              "name": "twitter:creator",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Additional HTML tags",
-              "name": "additional_tags",
-              "widget": "text",
-              "required": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "client-projects",
-      "label": "Client projects",
-      "folder": "site/client-projects",
-      "create": true,
-      "slug": "{{slug}}",
-      "editor": {
-        "preview": false
-      },
-      "fields": [
-        {
-          "label": "Title",
-          "name": "title",
-          "widget": "string"
-        },
-        {
-          "label": "Tags",
-          "widget": "hidden",
-          "name": "tags",
-          "default": "client-projects"
-        },
-        {
-          "label": "Publish Date",
-          "name": "date",
-          "widget": "datetime"
-        },
-        {
-          "label": "Layout",
-          "widget": "hidden",
-          "name": "layout",
-          "default": "single-client-projects.html"
-        },
-        {
-          "label": "Seo",
-          "name": "seo",
-          "widget": "object",
-          "fields": [
-            {
-              "label": "Title",
-              "name": "title",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Description",
-              "name": "description",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Open Graph Image",
-              "name": "og:image",
-              "widget": "image",
-              "required": false,
-              "media_library": {
-                "config": {
-                  "multiple": false
-                }
-              }
-            },
-            {
-              "label": "Twitter Card",
-              "name": "twitter:card",
-              "widget": "string",
-              "default": "summary",
-              "required": false
-            },
-            {
-              "label": "Twitter Site",
-              "name": "twitter:site",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Twitter Creator",
-              "name": "twitter:creator",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Additional HTML tags",
-              "name": "additional_tags",
-              "widget": "text",
-              "required": false
-            }
-          ]
-        },
-        {
-          "name": "project-summary",
-          "label": "Project summary",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "project-details",
-          "label": "Project details",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "client-testimonial",
-          "label": "Client testimonial",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "location",
-          "label": "Location",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "type-of-project",
-          "label": "Type of project",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "date-completed",
-          "label": "Date completed",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "name": "featured-image",
-          "label": "Featured image",
-          "widget": "image",
-          "required": false,
-          "media_library": {
-            "config": {
-              "multiple": false
-            }
-          }
-        },
-        {
-          "name": "additional-project-images",
-          "label": "Additional project images",
-          "widget": "image",
-          "required": false,
-          "media_library": {
-            "config": {
-              "multiple": true
-            }
-          }
-        },
-        {
-          "label": "Body",
-          "name": "body",
-          "widget": "markdown",
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "team-members",
-      "label": "Team members",
-      "folder": "site/team-members",
-      "create": true,
-      "slug": "{{slug}}",
-      "editor": {
-        "preview": false
-      },
-      "fields": [
-        {
-          "label": "Title",
-          "name": "title",
-          "widget": "string"
-        },
-        {
-          "label": "Tags",
-          "widget": "hidden",
-          "name": "tags",
-          "default": "team-members"
-        },
-        {
-          "label": "Publish Date",
-          "name": "date",
-          "widget": "datetime"
-        },
-        {
-          "label": "Layout",
-          "widget": "hidden",
-          "name": "layout",
-          "default": "single-team-members.html"
-        },
-        {
-          "label": "Seo",
-          "name": "seo",
-          "widget": "object",
-          "fields": [
-            {
-              "label": "Title",
-              "name": "title",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Description",
-              "name": "description",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Open Graph Image",
-              "name": "og:image",
-              "widget": "image",
-              "required": false,
-              "media_library": {
-                "config": {
-                  "multiple": false
-                }
-              }
-            },
-            {
-              "label": "Twitter Card",
-              "name": "twitter:card",
-              "widget": "string",
-              "default": "summary",
-              "required": false
-            },
-            {
-              "label": "Twitter Site",
-              "name": "twitter:site",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Twitter Creator",
-              "name": "twitter:creator",
-              "widget": "string",
-              "required": false
-            },
-            {
-              "label": "Additional HTML tags",
-              "name": "additional_tags",
-              "widget": "text",
-              "required": false
-            }
-          ]
-        },
-        {
-          "name": "image",
-          "label": "Image",
-          "widget": "image",
-          "required": false,
-          "media_library": {
-            "config": {
-              "multiple": false
-            }
-          }
-        },
-        {
-          "name": "client-projects",
-          "label": "Client projects",
-          "widget": "relation",
-          "collection": "client-projects",
-          "searchFields": [
-            "title"
-          ],
-          "valueField": "slug",
-          "displayFields": [
-            "title"
-          ],
-          "required": false
-        },
-        {
-          "name": "bio",
-          "label": "Bio",
-          "widget": "text",
-          "required": false
-        },
-        {
-          "label": "Body",
-          "name": "body",
-          "widget": "markdown",
-          "required": false
-        }
-      ]
-    }
-  ]
-}
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: projects
+    label: Projects
+    folder: cms/projects
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Project Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Project details
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_featured-on-homepage
+        label: Featured on homepage
+        widget: boolean
+        required: false
+      - hint: ''
+        name: f_brief-project-description
+        label: Brief project description
+        widget: string
+        required: false
+      - hint: ''
+        name: f_project-image
+        label: Project image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_alt-text-for-project-image
+        label: Alt text for project image
+        widget: string
+        required: false
+      - hint: ''
+        name: f_project-color
+        label: Project color
+        widget: color
+        required: false
+        enableAlpha: true
+        allowInput: true
+      - hint: ''
+        name: f_project-type-2
+        label: Project type
+        widget: relation
+        required: false
+        collection: project_types
+        value_field: cms/project-types/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: true
+      - hint: ''
+        name: f_project-year
+        label: Project year
+        widget: string
+        required: false
+      - hint: ''
+        name: f_client-name
+        label: Client name
+        widget: string
+        required: false
+      - hint: ''
+        name: f_project-link
+        label: Project link
+        widget: string
+        required: false
+      - hint: ''
+        name: f_project-images
+        label: Project images
+        widget: list
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: (Optional) Quote from the client
+        name: f_project-testimonial
+        label: Project testimonial
+        widget: text
+        required: false
+      - hint: (Optional) Put the author of the quote here
+        name: f_project-testimonial-by
+        label: Project testimonial by
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: projects
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[projects].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: project_types
+    label: Project types
+    folder: cms/project-types
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Project Type
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: project-types
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[project-types].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: Projects, key: -37ac8366'
+            label: Text
+            name: '-37ac8366'
+            widget: string
+          - hint: 'Original text: About Us, key: 645efc51'
+            label: Text
+            name: 645efc51
+            widget: string
+          - hint: 'Original text: Say Hi!, key: -2d1bf2b5'
+            label: Text
+            name: '-2d1bf2b5'
+            widget: string
+          - hint: 'Original text: Welcome!, key: -15b1cae1'
+            label: Text
+            name: '-15b1cae1'
+            widget: string
+          - hint: >-
+              Original text: We create meaningful digital experiences that
+              work., key: -4449e2af
+            label: Text
+            name: '-4449e2af'
+            widget: string
+          - hint: 'Original text: Selected projects, key: 5bcd043f'
+            label: Text
+            name: 5bcd043f
+            widget: string
+          - hint: 'Original text: Checkout our previous work, key: -24aceb74'
+            label: Text
+            name: '-24aceb74'
+            widget: string
+          - hint: "Original text: View\_, key: 4ed2a7b"
+            label: Text
+            name: 4ed2a7b
+            widget: string
+          - hint: "Original text: \_project, key: -25b3a987"
+            label: Text
+            name: '-25b3a987'
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: Let''s work together!, key: -5bd0004f'
+            label: Text
+            name: '-5bd0004f'
+            widget: string
+          - hint: >-
+              Original text: We'd love to hear from you. Feel free to fill out
+              the form below or shoot an email to info@obuntusolutions.com, key:
+              1dd1d263
+            label: Text
+            name: 1dd1d263
+            widget: text
+          - hint: 'Original text: Name, key: 24eeab'
+            label: Text
+            name: 24eeab
+            widget: string
+          - hint: 'Original text: Email Address, key: -2b7010d0'
+            label: Text
+            name: '-2b7010d0'
+            widget: string
+          - hint: 'Original text: Message, key: -63dc6819'
+            label: Text
+            name: '-63dc6819'
+            widget: string
+          - hint: 'Original text: Thank you for reaching out!, key: 4d8b38d6'
+            label: Text
+            name: 4d8b38d6
+            widget: string
+          - hint: >-
+              Original text: We aim to respond within one business day. , key:
+              -254fdc86
+            label: Text
+            name: '-254fdc86'
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: "Original text: I\_am, because we are. Humanity towards others., key: 5ccc8eed"
+            label: Text
+            name: 5ccc8eed
+            widget: string
+          - hint: 'Original text: Solving problems with you., key: 54606121'
+            label: Text
+            name: '54606121'
+            widget: string
+          - hint: 'Original text: This is Obuntu., key: -12d757d3'
+            label: Text
+            name: '-12d757d3'
+            widget: string
+          - hint: 'Original text: Client, key: 7877dfeb'
+            label: Text
+            name: 7877dfeb
+            widget: string
+          - hint: 'Original text: Project type, key: 3e549001'
+            label: Text
+            name: '3e549001'
+            widget: string
+          - hint: 'Original text: Project Year, key: 3e47fd24'
+            label: Text
+            name: 3e47fd24
+            widget: string
+          - hint: 'Original text: View project, key: -2205ff42'
+            label: Text
+            name: '-2205ff42'
+            widget: string
+          - hint: 'Original text: Other projects, key: -450ec856'
+            label: Text
+            name: '-450ec856'
+            widget: string
+          - hint: 'Original text: We''d love to hear from you!, key: -9a046ce'
+            label: Text
+            name: '-9a046ce'
+            widget: string
+          - hint: 'Original text: Page not found, key: 49a057c4'
+            label: Text
+            name: 49a057c4
+            widget: string
+          - hint: 'Original text: 404, key: c938'
+            label: Text
+            name: c938
+            widget: string
+          - hint: >-
+              Original text: The page you are looking for doesn't exist or has
+              been moved, key: 556d64d8
+            label: Text
+            name: 556d64d8
+            widget: string
+          - hint: 'Original text: Back to homepage, key: 2948e5a'
+            label: Text
+            name: 2948e5a
+            widget: string
+          - hint: 'Original text: Secret, key: -6c9fc530'
+            label: Text
+            name: '-6c9fc530'
+            widget: string
+          - hint: 'Original text: This content is password protected, key: -2cf6772a'
+            label: Text
+            name: '-2cf6772a'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros , key: -731a7d61
+            label: Text
+            name: '-731a7d61'
+            widget: string
+          - hint: 'Original text: Password, key: 4c641ebb'
+            label: Text
+            name: 4c641ebb
+            widget: string
+          - hint: >-
+              Original text: Incorrect password. Please try again., key:
+              -f5c4b5f
+            label: Text
+            name: '-f5c4b5f'
+            widget: string
+          - hint: 'Original text: Who are we., key: -f3b072e'
+            label: Text
+            name: '-f3b072e'
+            widget: string
+          - hint: >-
+              Original text: We are a creative agency focused on clean design,
+              problem solving, and forming strong long lasting relationships
+              with our clients. There is no us without you - we believe that our
+              success is directly tied to the success of our clients. , key:
+              -3dbd7755
+            label: Text
+            name: '-3dbd7755'
+            widget: text
+          - hint: >-
+              Original text: We are problem solvers who provide tools and
+              resources to our clients so that they are in the best position to
+              succeed., key: -2d83d00d
+            label: Text
+            name: '-2d83d00d'
+            widget: text
+          - hint: >-
+              Original text: Obuntu, originally spelled Ubuntu, comes from the
+              Nguni Bantu language and translates as “humanity” or our personal
+              favorite “I am because you are”. This South African philosophy
+              reflects our approach with clients as well as how we relate to
+              each other within our agency., key: -a8e8299
+            label: Text
+            name: '-a8e8299'
+            widget: text
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: /#projects, key: -1caff5b2'
+            label: Link
+            name: '-1caff5b2'
+            widget: string
+          - hint: 'Original link: /about, key: 55b8e8be'
+            label: Link
+            name: 55b8e8be
+            widget: string
+          - hint: 'Original link: /contact, key: 4b0e6111'
+            label: Link
+            name: 4b0e6111
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: '-75850d27'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-38c07b09'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-499105c4'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 63f089e7
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7c1164b6
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-8fe8226'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2e5ebfd8
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3d634906'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2f8bbcaf'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2dcab44e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-137c0172'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3bb2025
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2d7f37b5
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3ea1eec7'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-51b9b6d5'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
